@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+
+    {% include "vehicle/main/navbar.html" %}
+  
+    <div style="align-content: center;">
+      <h3 class='alert alert-success'>Send Us Your Valuable Feedback !</h3>
+
+      <form method="POST">
+      <!-- Very Important csrf Token -->
+      {% csrf_token %}
+        <div class="form-group">
+            <p>
+            <h3>{{ form.as_p }}</h3>
+            </p>
+            <br>
+            <input  type="submit" value="Send Message" class='btn btn-primary btn-lg' style="text-align: center;" >
+        </div>
+      </form>
+        
+    </div>
+
+
+  <marquee behaviour="scroll" direction="left">
+    <img src="{% static 'images/audi-car-logo.png' %}" width="150" height="100" alt="audi" />
+        <img src="{% static 'images/bmw-car-logo.png' %}" width="150" height="100" alt="bmw" />
+        <img src="{% static 'images/chevrolet-car-logo.png' %}" width="150" height="100" alt="chevrolet" />
+        <img src="{% static 'images/corvette-car-logo.png' %}" width="150" height="100" alt="corvette" />
+        <img src="{% static 'images/chrysler-car-logo.png' %}" width="150" height="100" alt="chrysler" />
+        <img src="{% static 'images/citron-car-logo.png' %}" width="150" height="100" alt="citron" />
+        <img src="{% static 'images/ferrari-car-logo.png' %}" width="150" height="100" alt="ferrari" />
+        <img src="{% static 'images/ford-car-logo.png' %}" width="150" height="100" alt="ford" />
+        <img src="{% static 'images/honda-car-logo.png' %}" width="150" height="100" alt="honda" />
+        <img src="{% static 'images/hyundai-car-logo.png' %}" width="150" height="100" alt="hyundai" />
+        <img src="{% static 'images/jaguar-car-logo.png' %}" width="150" height="100" alt="jaguar" />
+        <img src="{% static 'images/jeep-car-logo.png' %}" width="150" height="100" alt="jeep" />
+        <img src="{% static 'images/land-rover-car-logo.png' %}" width="150" height="100" alt="land-rover" />
+        <img src="{% static 'images/lexus-car-logo.png' %}" width="150" height="100" alt="lexus" />
+        <img src="{% static 'images/mazda-car-logo.png' %}" width="150" height="100" alt="mazda" />
+        <img src="{% static 'images/mclaren-car-logo.png' %}" width="150" height="100" alt="mclaren" />
+        <img src="{% static 'images/mercedes-benz-car-logo.png' %}" width="150" height="100" alt="mercedez-benz" />
+        <img src="{% static 'images/mini-car-logo.png' %}" width="150" height="100" alt="mini" />
+        <img src="{% static 'images/mitsubishi-car-logo.png' %}" width="150" height="100" alt="mitsubishi" />
+        <img src="{% static 'images/nissan-car-logo.png' %}" width="150" height="100" alt="nissan" />
+        <img src="{% static 'images/renault-car-logo.png' %}" width="150" height="100" alt="renault" />
+        <img src="{% static 'images/subaru-car-logo.png' %}" width="150" height="100" alt="subaru" />
+        <img src="{% static 'images/tesla-car-logo.png' %}" width="150" height="100" alt="tesla" />
+        <img src="{% static 'images/toyota-car-logo.png' %}" width="150" height="100" alt="toyota" />
+        <img src="{% static 'images/volkswagen-car-logo.png' %}" width="150" height="100" alt="volkswagen" />
+    
+
+  </marquee>
+
+  {% include "vehicle/main/footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanic SignUp</title>
+    <style media="screen">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: white;
+        }
+        
+        .box {
+            border-radius: 25px;
+            width: 500px;
+            padding: 40px;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            background: #343a40!important;
+            text-align: center;
+            transition: 0.25s;
+            margin-top: 100px
+        }
+        
+        .box input[type="text"],
+        .box input[type="password"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 1px solid white;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s
+        }
+        
+        .box h1 {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500
+        }
+        
+        .box input[type="text"]:focus,
+        .box input[type="password"]:focus {
+            width: 300px;
+            border-color: yellow;
+        }
+        
+        .box input[type="submit"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 1px solid;
+            padding: 10px 30px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer
+        }
+        
+        .box input[type="submit"]:hover {
+            background: yellow;
+        }
+        
+    </style>
+</head>
+
+<body>
+    {% include "vehicle/main/navbar.html" %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form class="box" method="post" enctype="multipart/form-data" >
+                        <img src="{% static 'assets/Grand-logo.png' %}" alt="Image" class="img-fluid" style="width:150px; height:100px;">
+                        {% csrf_token %}
+                        <h1>Mechanic SignUp</h1>
+                        <p class="text-muted">Please enter your details to create account !. </p>
+                            {% render_field userForm.first_name class="form-control" placeholder="First Name" %}
+                            {% render_field userForm.last_name class="form-control" placeholder="Last Name" %}
+                            {% render_field mechanicForm.address class="form-control" placeholder="Address" %}
+                            {% render_field mechanicForm.mobile class="form-control" placeholder="Mobile" %}
+                            {% render_field mechanicForm.skill class="form-control" placeholder="Skills" %}
+                            {% render_field userForm.username class="form-control" placeholder="Username" %}
+                            {% render_field userForm.password class="form-control" placeholder="Password" %}
+                            {% render_field mechanicForm.profile_pic class="form-control" placeholder="Profile Pic" %}
+                            <input type="submit" name="" value="SIGN UP">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br>
+
+    
+
+</body>
+
+<footer>
+
+    {% include "vehicle/main/footer.html" %}
+</footer>
+</html>
